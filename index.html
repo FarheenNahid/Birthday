@@ -46,7 +46,14 @@
 
       background-size: cover;
       background-repeat: no-repeat;
-      transform: scale(1.02)
+      transform: scale(1.02);
+      opacity: 0;
+      transition: opacity 1.2s ease
+    }
+
+    /* Reveal the background image only when the surprise is opened */
+    body.surprise-open::before {
+      opacity: 1
     }
 
     .stars,
@@ -356,9 +363,23 @@
     for (let i = 0; i < 48; i++) { const star = document.createElement('i'); star.style.left = `${Math.random() * 100}%`; star.style.top = `${Math.random() * 100}%`; star.style.animationDelay = `${Math.random() * 3}s`; stars.appendChild(star); }
     const surpriseBtn = document.getElementById('surpriseBtn'), surprise = document.getElementById('surprise');
     surpriseBtn.addEventListener('click', () => {
-      const open = surprise.classList.toggle('show'); surpriseBtn.setAttribute('aria-expanded', String(open));
+      const open = surprise.classList.toggle('show');
+      document.body.classList.toggle('surprise-open', open);
+      surpriseBtn.setAttribute('aria-expanded', String(open));
       surpriseBtn.textContent = open ? 'Close surprise' : 'Open your little surprise ✨';
-      if (open) { const layer = document.getElementById('confetti'), colors = ['#ffd98a', '#ffb6c9', '#c8b5ff', '#fff', '#a8e6cf']; for (let i = 0; i < 90; i++) { const bit = document.createElement('i'); bit.className = 'confetti'; bit.style.left = `${Math.random() * 100}%`; bit.style.background = colors[Math.floor(Math.random() * colors.length)]; bit.style.animationDelay = `${Math.random() * .8}s`; layer.appendChild(bit); setTimeout(() => bit.remove(), 4200); } }
+      if (open) {
+        const layer = document.getElementById('confetti');
+        const colors = ['#ffd98a', '#ffb6c9', '#c8b5ff', '#fff', '#a8e6cf'];
+        for (let i = 0; i < 90; i++) {
+          const bit = document.createElement('i');
+          bit.className = 'confetti';
+          bit.style.left = `${Math.random() * 100}%`;
+          bit.style.background = colors[Math.floor(Math.random() * colors.length)];
+          bit.style.animationDelay = `${Math.random() * .8}s`;
+          layer.appendChild(bit);
+          setTimeout(() => bit.remove(), 4200);
+        }
+      }
     });
     const audio = document.getElementById('birthdayAudio'), musicBtn = document.getElementById('musicBtn');
     musicBtn.addEventListener('click', async () => {
