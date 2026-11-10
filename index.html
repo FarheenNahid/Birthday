@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b1230">
+  <meta name="description" content="A birthday surprise made with love for Farheen Nahid.">
+  <title>Happy Birthday, Farheen Nahid!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fff5eb;
+      --pink: #ff9fbe;
+      --gold: #ffdc98;
+      --muted: #e9dce9
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      background: linear-gradient(135deg, #160e27, #2b183e 55%, #171329);
+      overflow-x: hidden
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: linear-gradient(115deg, rgba(18, 10, 32, .82), rgba(30, 14, 42, .68)), url("assets/background.jpg");
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: scale(1.02)
+    }
+
+    .stars,
+    .confetti-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0
+    }
+
+    .stars i {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #fff2c8;
+      opacity: .7;
+      animation: twinkle 3s infinite ease-in-out
+    }
+
+    @keyframes twinkle {
+      50% {
+        opacity: .15;
+        transform: scale(.6)
+      }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1000px, 92%);
+      margin: auto;
+      padding: 28px 0 42px;
+      text-align: center
+    }
+
+    .topline {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      padding: 9px 16px;
+      border: 1px solid #ffffff30;
+      border-radius: 99px;
+      background: #ffffff0d;
+      color: #ffe1aa;
+      font-size: .74rem;
+      letter-spacing: .15em;
+      text-transform: uppercase
+    }
+
+    .music {
+      position: absolute;
+      right: 0;
+      top: 27px;
+      border: 1px solid #ffffff40;
+      border-radius: 99px;
+      background: #ffffff12;
+      color: #fff;
+      padding: 10px 15px;
+      font: 600 .82rem "DM Sans";
+      cursor: pointer
+    }
+
+    .hero {
+      padding: 66px 0 28px
+    }
+
+    .eyebrow {
+      color: var(--pink);
+      font-size: .78rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      font-weight: 700
+    }
+
+    h1 {
+      font: 600 clamp(3.2rem, 9vw, 6.6rem)/1.04 "Great Vibes", cursive;
+      margin: 18px 0 8px;
+      color: var(--pink);
+      text-shadow: 0 4px 30px #ff83b955
+    }
+
+    h1 span {
+      display: block;
+      color: var(--gold);
+      font-size: 1.08em
+    }
+
+    .subtitle {
+      max-width: 650px;
+      margin: 16px auto 0;
+      color: #fff4e8c9;
+      line-height: 1.8;
+      font-size: clamp(1rem, 2.5vw, 1.16rem)
+    }
+
+    .cake {
+      font-size: 5rem;
+      margin: 22px 0 0;
+      display: inline-block;
+      filter: drop-shadow(0 12px 24px #0005);
+      animation: bob 3s ease-in-out infinite
+    }
+
+    @keyframes bob {
+      50% {
+        transform: translateY(-9px) rotate(2deg)
+      }
+    }
+
+    .card {
+      width: min(760px, 100%);
+      margin: 22px auto 0;
+      padding: clamp(24px, 5vw, 42px);
+      border: 1px solid #ffffff30;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #ffffff1c, #ffffff09);
+      box-shadow: 0 25px 80px #0004;
+      backdrop-filter: blur(14px)
+    }
+
+    .card h2,
+    .gallery-title {
+      margin: 0 0 16px;
+      color: var(--gold);
+      font: 600 clamp(1.7rem, 4vw, 2.2rem) "Playfair Display", serif
+    }
+
+    .message {
+      margin: 0;
+      color: #fff4e8e8;
+      line-height: 1.95;
+      font-size: 1.02rem
+    }
+
+    .divider {
+      width: 75px;
+      height: 2px;
+      margin: 24px auto;
+      background: linear-gradient(90deg, transparent, var(--pink), transparent)
+    }
+
+    .wish {
+      color: #ffd8e4;
+      font: italic 1.15rem/1.7 "Playfair Display", serif
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    .primary {
+      margin-top: 20px;
+      padding: 14px 23px;
+      border: 0;
+      border-radius: 99px;
+      color: #321b36;
+      background: linear-gradient(110deg, #ffe1a4, #ffb8ce);
+      font: 700 .95rem "DM Sans";
+      box-shadow: 0 8px 28px #ffb6c933;
+      transition: transform .2s
+    }
+
+    button:hover {
+      transform: translateY(-2px)
+    }
+
+    button:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 4px
+    }
+
+    #surprise {
+      display: none;
+      margin: 22px auto 0;
+      max-width: 540px;
+      color: #fff0c9;
+      font: 600 1.35rem/1.7 "Playfair Display", serif
+    }
+
+    #surprise.show {
+      display: block;
+      animation: appear .7s ease both
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .footer {
+      margin-top: 45px;
+      color: #fff4e87a;
+      font-size: .78rem;
+      letter-spacing: .1em
+    }
+
+    .balloon {
+      position: fixed;
+      bottom: -100px;
+      z-index: 0;
+      font-size: 3rem;
+      opacity: .38;
+      animation: floatUp 17s linear infinite;
+      pointer-events: none
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-125vh) rotate(18deg)
+      }
+    }
+
+    .confetti {
+      position: absolute;
+      top: -20px;
+      width: 8px;
+      height: 13px;
+      animation: fall 3.3s linear forwards
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: .1
+      }
+    }
+
+    .hint {
+      margin: 16px auto 0;
+      color: #fff4e88a;
+      font-size: .76rem;
+      line-height: 1.6
+    }
+
+    @media(max-width:700px) {
+      .music {
+        position: static;
+        margin: 16px auto 0;
+        display: block
+      }
+
+      .hero {
+        padding-top: 42px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+  <main class="page">
+    <div class="topline">✦ A little celebration just for you ✦</div>
+    <button class="music" id="musicBtn" type="button" aria-label="Play birthday music">♫ Play birthday music</button>
+    <audio id="birthdayAudio" loop preload="none">
+      <source src="assets/birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="hero">
+      <div class="eyebrow">Today is all about you</div>
+      <h1>Happy Birthday<span>Farheen Nahid</span></h1>
+      <p class="subtitle">A beautiful day for a beautiful soul. May your year be filled with laughter, love, little
+        surprises and countless reasons to smile.</p>
+      <div class="cake" aria-hidden="true">🎂</div>
+    </section>
+
+    <section class="card" aria-labelledby="message-title">
+      <h2 id="message-title">A wish from the heart</h2>
+      <p class="message">May every new day bring you closer to the dreams you hold dear. May your heart always find
+        reasons to be happy, your path be bright with possibilities, and the people around you remind you how special
+        you are. Keep shining, keep smiling, and never stop being wonderfully you.</p>
+      <div class="divider"></div>
+      <p class="wish">“Wishing you a year as lovely, bright and unforgettable as you are.”</p>
+      <button class="primary" id="surpriseBtn" type="button" aria-expanded="false" aria-controls="surprise">Open your
+        little surprise ✨</button>
+      <p id="surprise" role="status">🌷 May all the good things you give to the world find their way back to you,
+        multiplied. Happy Birthday, Farheen! 💖</p>
+    </section>
+
+    <footer class="footer">MADE WITH ♥ FOR FARHEEN NAHID</footer>
+  </main>
+  <div class="balloon" style="left:7%;animation-delay:0s" aria-hidden="true">🎈</div>
+  <div class="balloon" style="left:87%;animation-delay:5s" aria-hidden="true">🎈</div>
+  <div class="balloon" style="left:72%;animation-delay:10s" aria-hidden="true">🎈</div>
+  <script>
+    const stars = document.getElementById('stars');
+    for (let i = 0; i < 48; i++) { const star = document.createElement('i'); star.style.left = `${Math.random() * 100}%`; star.style.top = `${Math.random() * 100}%`; star.style.animationDelay = `${Math.random() * 3}s`; stars.appendChild(star); }
+    const surpriseBtn = document.getElementById('surpriseBtn'), surprise = document.getElementById('surprise');
+    surpriseBtn.addEventListener('click', () => {
+      const open = surprise.classList.toggle('show'); surpriseBtn.setAttribute('aria-expanded', String(open));
+      surpriseBtn.textContent = open ? 'Close surprise' : 'Open your little surprise ✨';
+      if (open) { const layer = document.getElementById('confetti'), colors = ['#ffd98a', '#ffb6c9', '#c8b5ff', '#fff', '#a8e6cf']; for (let i = 0; i < 90; i++) { const bit = document.createElement('i'); bit.className = 'confetti'; bit.style.left = `${Math.random() * 100}%`; bit.style.background = colors[Math.floor(Math.random() * colors.length)]; bit.style.animationDelay = `${Math.random() * .8}s`; layer.appendChild(bit); setTimeout(() => bit.remove(), 4200); } }
+    });
+    const audio = document.getElementById('birthdayAudio'), musicBtn = document.getElementById('musicBtn');
+    musicBtn.addEventListener('click', async () => {
+      if (audio.paused) { try { await audio.play(); musicBtn.textContent = 'Ⅱ Pause birthday music'; } catch (e) { alert('Add your MP3 as assets/birthday-song.mp3, then reload this page.'); } }
+      else { audio.pause(); musicBtn.textContent = '♫ Play birthday music'; }
+    });
+  </script>
+</body>
+
+</html>
